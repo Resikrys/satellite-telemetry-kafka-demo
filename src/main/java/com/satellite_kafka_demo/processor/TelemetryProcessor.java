@@ -1,5 +1,5 @@
 //Componente 2: Telemetry Processor
-//Aquí es donde ocurre la "limpieza" o enriquecimiento de datos.
+//This is where data "cleaning" or enrichment takes place.
 package com.satellite_kafka_demo.processor;
 
 import com.satellite_kafka_demo.model.Telemetry;
@@ -15,10 +15,10 @@ public class TelemetryProcessor {
 
     @KafkaListener(topics = "satellite-raw", groupId = "processor-group")
     public void process(Telemetry rawData) {
-        // Simulación de procesamiento: Normalización de datos
+        // Processing simulation: Data normalization
         rawData.setSatelliteId(rawData.getSatelliteId().toUpperCase());
 
-        // Reenvío al siguiente tópico del pipeline
+        // Forward to the next pipeline topic
         kafkaTemplate.send("satellite-processed", rawData);
         System.out.println("Processed and Forwarded: " + rawData.getSatelliteId());
     }

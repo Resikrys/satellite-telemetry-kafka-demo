@@ -1,5 +1,5 @@
 //Componente 3: Alert Service
-//El consumidor final que decide si hay una emergencia.
+//The end consumer decides if there is an emergency.
 package com.satellite_kafka_demo.alert;
 
 import com.satellite_kafka_demo.model.Telemetry;

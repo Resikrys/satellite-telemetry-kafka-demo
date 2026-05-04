@@ -1,5 +1,5 @@
 //POJO model
-//Compartido entre los servicios para mantener la consistencia.
+//Shared between services to maintain consistency.
 package com.satellite_kafka_demo.model;
 
 import lombok.AllArgsConstructor;
