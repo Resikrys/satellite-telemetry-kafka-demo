@@ -4,7 +4,12 @@ This project is a simulation of a satellite telemetry data pipeline
 using Java Spring Boot and Apache Kafka.
 
 ## System Architecture:
+
 The data flow follows an event-driven architecture (EDA) model:
+````
+[telemetry-producer] --> Kafka --> [telemetry-processor] --> Kafka --> [alert-service]
+````
+
 - **Telemetry Producer**: Generates random data (ID, timestamp, 
 temperature, battery level) and sends it to the satellite-raw topic.
 - **Telemetry Processor**: Consumes data from satellite-raw, 
@@ -31,6 +36,7 @@ transforms/cleans the data, and publishes it to satellite-processed.
   ````
     mvn spring-boot:run
   ````
+
 ## Alert Thresholds
 The system is configured to detect:
 
@@ -53,6 +59,7 @@ To view the raw messages circulating through the processor, you can use:
   ````
 
 ### To be implemented:
+
 **Database**: Persist processed data in a time-series database 
 (InfluxDB or TimescaleDB).
 
