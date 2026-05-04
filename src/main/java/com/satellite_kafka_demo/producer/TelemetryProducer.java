@@ -1,3 +1,5 @@
+// Componente 1: Telemetry Producer
+//Este servicio simula el hardware del satélite.
 package com.satellite_kafka_demo.producer;
 
 import com.satellite_kafka_demo.model.Telemetry;
